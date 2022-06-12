@@ -32,7 +32,7 @@ class ClanMembershipRelationManager extends HasManyRelationManager
                 Tables\Columns\ImageColumn::make('user.avatar'),
                 Tables\Columns\TextColumn::make('user.name')->sortable(),
                 Tables\Columns\TextColumn::make('user.steam_id_64')->sortable(),
-                Tables\Columns\BooleanColumn::make('clan_membership.admin')->sortable(),
+                Tables\Columns\BooleanColumn::make('admin')->sortable(),
             ])
             ->filters([
                 //

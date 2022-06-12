@@ -3,6 +3,7 @@
 namespace SquadMS\Clans\Filament\Resources;
 
 use SquadMS\Clans\Filament\Resources\ClanResource\Pages;
+use SquadMS\Clans\Filament\Resources\ClanResource\RelationManagers;
 use SquadMS\Clans\Models\Clan;
 use Filament\Forms;
 use Filament\Resources\Form;
@@ -45,7 +46,7 @@ class ClanResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\ClanMembershipRelationManager::class
         ];
     }
     

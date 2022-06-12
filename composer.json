@@ -39,7 +39,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SquadMS\\Clans\\ContactServiceProvider",
+                "SquadMS\\Clans\\ClansServiceProvider",
                 "SquadMS\\Clans\\Providers\\EloquentServiceProvider",
                 "SquadMS\\Clans\\Providers\\FilamentServiceProvider",
                 "SquadMS\\Clans\\Providers\\ModulesServiceProvider",

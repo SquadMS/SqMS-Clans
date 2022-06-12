@@ -1,6 +1,6 @@
 <?php
 
-namespace SquadMS\AdminConfig\Filament\Resources\AdminConfigResource\RelationManagers;
+namespace SquadMS\Clans\Filament\Resources\ClanResource\RelationManagers;
 
 use Filament\Forms;
 use Filament\Resources\Form;

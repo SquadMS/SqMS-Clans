@@ -14,7 +14,12 @@ class Clan extends Model
         'name'
     ];
     
-    function users() : HasMany
+    function founder() : BelongsTo
+    {
+        return $this->belongsTo(SquadMSUser::class);
+    }
+    
+    function members() : HasMany
     {
         return $this->hasMany(SquadMSUser::class);
     }

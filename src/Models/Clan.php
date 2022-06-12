@@ -3,7 +3,7 @@
 namespace SquadMS\Clans\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use SquadMS\Foundation\Models\SquadMSUser;
 
 class Clan extends Model
@@ -15,18 +15,18 @@ class Clan extends Model
         'name'
     ];
     
-    function founder() : HasOneThrough
+    function founder() : BelongsToMany
     {
-        return $this->hasOneThrough(SquadMSUser::class, ClanMembership::class);
+        return $this->belongsToMany(SquadMSUser::class, ClanMembership::class);
     }
     
-    function members() : HasManyThrough
+    function members() : BelongsToMany
     {
-        return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class);
+        return $this->belongsToMany(SquadMSUser::class, ClanMembership::class);
     }
     
-    function admins() : HasManyThrough
+    function admins() : BelongsToMany
     {
-        return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class)->whereTrue('clan_memberships.admin');
+        return $this->belongsToMany(SquadMSUser::class, ClanMembership::class)->whereTrue('clan_memberships.admin');
     }
 }

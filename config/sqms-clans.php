@@ -1,6 +1,7 @@
 <?php
 
 return [
+  'public' = false,
   'permissions' => [
     'module' => 'sqms-clans',
     'definitions' => [

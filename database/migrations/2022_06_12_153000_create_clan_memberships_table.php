@@ -16,6 +16,9 @@ return new class extends Migration
         Schema::create('clan_memberships', function (Blueprint $table) {
             $table->bigIncrements('id');
 
+            $table->unsignedBigInteger('clan_id')->nullable();
+            $table->foreign('clan_id')->references('id')->on('clans')->cascadeOnDelete();
+            
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             

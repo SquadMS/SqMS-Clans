@@ -16,16 +16,16 @@ class Clan extends Model
     
     function founder() : BelongsTo
     {
-        return $this->belongsTo(SquadMSUser::class);
+        return $this->hasOneThrough(SquadMSUser::class, ClanMembership::class);
     }
     
     function members() : HasMany
     {
-        return $this->hasMany(SquadMSUser::class);
+        return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class);
     }
     
     function admins() : HasMany
     {
-        return $this->hasMany(SquadMSUser::class);
+        return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class)->whereTrue('clan_memberships.admin');
     }
 }

@@ -37,4 +37,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('clan_memberships');
     }
-}
+};

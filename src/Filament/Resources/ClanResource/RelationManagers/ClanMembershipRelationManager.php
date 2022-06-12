@@ -10,7 +10,7 @@ use Filament\Tables;
 
 class ClanMembershipRelationManager extends HasManyRelationManager
 {
-    protected static string $relationship = 'members';
+    protected static string $relationship = 'memberships';
 
     protected static ?string $recordTitleAttribute = 'name';
 

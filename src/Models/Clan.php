@@ -14,17 +14,17 @@ class Clan extends Model
         'name'
     ];
     
-    function founder() : BelongsTo
+    function founder() : HasOneThrough
     {
         return $this->hasOneThrough(SquadMSUser::class, ClanMembership::class);
     }
     
-    function members() : HasMany
+    function members() : HasManyThrough
     {
         return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class);
     }
     
-    function admins() : HasMany
+    function admins() : HasManyThrough
     {
         return $this->hasManyThrough(SquadMSUser::class, ClanMembership::class)->whereTrue('clan_memberships.admin');
     }

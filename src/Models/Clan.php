@@ -3,6 +3,7 @@
 namespace SquadMS\Clans\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 use SquadMS\Foundation\Models\SquadMSUser;
 
 class Clan extends Model

@@ -25,8 +25,8 @@ class ClansServiceProvider extends ServiceProvider
     {
         /* Configuration */
         $this->mergeConfigFrom(__DIR__.'/../config/sqms-clans.php', 'sqms-clans');
-        
+
         /* Load Migrations */
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
     }
 }

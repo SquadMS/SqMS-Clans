@@ -3,8 +3,8 @@
 namespace SquadMS\Clans\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use SquadMS\Foundation\Facades\SquadMSModuleRegistry;
 use SquadMS\Clans\SquadMSModule;
+use SquadMS\Foundation\Facades\SquadMSModuleRegistry;
 
 class ModulesServiceProvider extends ServiceProvider
 {

@@ -2,9 +2,8 @@
 
 namespace SquadMS\Clans\Filament\Resources\ClanResource\Pages;
 
-use SquadMS\Clans\Filament\Resources\ClanResource;
-use Filament\Pages\Actions\Action;
 use Filament\Resources\Pages\EditRecord;
+use SquadMS\Clans\Filament\Resources\ClanResource;
 
 class EditClan extends EditRecord
 {

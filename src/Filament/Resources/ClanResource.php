@@ -2,20 +2,20 @@
 
 namespace SquadMS\Clans\Filament\Resources;
 
-use SquadMS\Clans\Filament\Resources\ClanResource\Pages;
-use SquadMS\Clans\Filament\Resources\ClanResource\RelationManagers;
-use SquadMS\Clans\Models\Clan;
 use Filament\Forms;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Form;
 use Filament\Resources\Resource;
 use Filament\Resources\Table;
 use Filament\Tables;
-use Filament\Resources\Concerns\Translatable;
+use SquadMS\Clans\Filament\Resources\ClanResource\Pages;
+use SquadMS\Clans\Filament\Resources\ClanResource\RelationManagers;
+use SquadMS\Clans\Models\Clan;
 
 class ClanResource extends Resource
 {
     use Translatable;
-    
+
     protected static ?string $navigationGroup = 'Clans Management';
 
     protected static ?string $model = Clan::class;
@@ -28,7 +28,7 @@ class ClanResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->rules('required|string|min:1|max:255')
-                    ->required()
+                    ->required(),
             ]);
     }
 
@@ -42,14 +42,14 @@ class ClanResource extends Resource
                 //
             ]);
     }
-    
+
     public static function getRelations(): array
     {
         return [
-            RelationManagers\ClanMembershipRelationManager::class
+            RelationManagers\ClanMembershipRelationManager::class,
         ];
     }
-    
+
     public static function getPages(): array
     {
         return [

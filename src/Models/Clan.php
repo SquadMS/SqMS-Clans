@@ -3,8 +3,8 @@
 namespace SquadMS\Clans\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use SquadMS\Foundation\Models\SquadMSUser;
 
 class Clan extends Model
@@ -13,24 +13,25 @@ class Clan extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'name'
+        'name',
     ];
-    function memberships() : HasMany
+
+    public function memberships(): HasMany
     {
         return $this->hasMany(ClanMembership::class);
     }
-    
-    function founder() : BelongsToMany
+
+    public function founder(): BelongsToMany
     {
         return $this->belongsToMany(SquadMSUser::class, ClanMembership::class);
     }
-    
-    function members() : BelongsToMany
+
+    public function members(): BelongsToMany
     {
         return $this->belongsToMany(SquadMSUser::class, ClanMembership::class);
     }
-    
-    function admins() : BelongsToMany
+
+    public function admins(): BelongsToMany
     {
         return $this->belongsToMany(SquadMSUser::class, ClanMembership::class)->whereTrue('clan_memberships.admin');
     }

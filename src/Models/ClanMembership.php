@@ -12,15 +12,15 @@ class ClanMembership extends Model
      * The attributes that are mass assignable.
      */
     protected $fillable = [
-        'admin'
+        'admin',
     ];
-    
-    function clan() : BelongsTo
+
+    public function clan(): BelongsTo
     {
         return $this->belongsTo(Clan::class);
     }
-    
-    function user() : BelongsTo
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo(SquadMSUser::class);
     }

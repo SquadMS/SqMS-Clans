@@ -17,6 +17,7 @@ return new class extends Migration
             $table->bigIncrements('id');
 
             $table->string('name');
+            $table->string('tag');
 
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();

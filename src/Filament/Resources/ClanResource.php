@@ -26,12 +26,23 @@ class ClanResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->rules('required|string|min:1|max:255')
-                    ->required(),
-                Forms\Components\TextInput::make('tag')
-                    ->rules('required|string|min:1|max:255')
-                    ->required(),
+                Forms\Components\Grid::make()
+                ->schema([
+                    Forms\Components\TextInput::make('name')
+                        ->rules('required|string|min:1|max:255')
+                        ->required(),
+                    Forms\Components\TextInput::make('tag')
+                        ->rules('required|string|min:1|max:255')
+                        ->required(),
+                    Forms\Components\TextInput::make('website')
+                        ->type('url')
+                        ->rules('url'),
+                    Forms\Components\FileUpload::make('logo')
+                        ->image()
+                        ->disk('images')
+                        ->directory('clan-logos')
+                        ->visibility('public')
+                ])
             ]);
     }
 

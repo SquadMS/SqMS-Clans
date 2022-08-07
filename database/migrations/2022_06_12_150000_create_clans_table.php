@@ -16,8 +16,10 @@ return new class extends Migration
         Schema::create('clans', function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->string('name');
-            $table->string('tag');
+            $table->string('name')->unique();
+            $table->string('tag')->unique();
+            $table->string('website')->nullable();
+            $table->string('logo')->nullable();
 
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->nullOnDelete();

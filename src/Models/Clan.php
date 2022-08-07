@@ -15,6 +15,8 @@ class Clan extends Model
     protected $fillable = [
         'name',
         'tag',
+        'website',
+        'logo'
     ];
 
     public function memberships(): HasMany

@@ -29,6 +29,9 @@ class ClanResource extends Resource
                 Forms\Components\TextInput::make('name')
                     ->rules('required|string|min:1|max:255')
                     ->required(),
+                Forms\Components\TextInput::make('tag')
+                    ->rules('required|string|min:1|max:255')
+                    ->required(),
             ]);
     }
 
@@ -37,6 +40,7 @@ class ClanResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')->sortable(),
+                Tables\Columns\TextColumn::make('tag')->sortable(),
             ])
             ->filters([
                 //
